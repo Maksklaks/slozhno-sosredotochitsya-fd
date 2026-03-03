@@ -1,5 +1,355 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта*/
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.shadow-decor {
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+/* Декоротивные уголки */
+.decorated-zone {
+  position: relative;
+}
+
+.cover {
+  display: grid;
+  padding: var(--container-padding);
+  min-block-size: 100vh;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  inset-inline-end: var(--container-padding);
+  inset-block-start: var(--container-padding);
+  border-inline-end: 1px solid var(--ui-color);
+  border-block-start: 1px solid var(--ui-color);
+}
+
+.decorated-zone::after {
+  inset-inline-start: var(--container-padding);
+  inset-block-end: var(--container-padding);
+  border-inline-start: 1px solid var(--ui-color);
+  border-block-end: 1px solid var(--ui-color);
+}
+
+/* хедер */
+.header {
+  min-height: 668px;
+  height: 100vh;
+  padding: var(--container-padding);
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: start;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.header__rec {
+  position: absolute;
+  z-index: 1;
+  visibility: var(--rec-visibility, visible);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: calc(var(--container-padding) + var(--rec-offset-x));
+  inset-block-start: var(--container-padding);
+}
+
+.header__rec::before {
+  content: "REC";
+  color: var(--accent-color, #ff0070);
+  line-height: 25px;
+  font-size: var(--font-size);
+}
+
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+  background: var(--accent-color, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: start;
+  margin-block-start: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 2px 12px;
+  color: var(--ui-color);
+  background: transparent;
+  cursor: pointer;
+  line-height: 18px;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--ui-hover-border);
+}
+
+.header__theme-menu-button:focus {
+  outline: 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: var(--outline);
+  outline-offset: 2px;
+}
+
+.header__theme-menu-button_active {
+  border-color: currentColor;
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 83%;
+  font-size: var(--title-size);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__description {
+  margin: 55px 0 66px;
+  color: var(--on-accent, #000028);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  background: var(--accent-color, #ff0070);
+}
+
+/* текст и оформление ссылок */
+.title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.title-decor {
+  color: var(--on-accent);
+  background: var(--accent-color);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 0;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Основной контент */
+.main-content {
+  display: grid;
+  gap: var(--section-gap);
+  padding: 40px var(--container-padding);
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__images {
+  gap: 10px;
+}
+
+.section__how-title {
+  margin-block-end: 20px;
+}
+
+.article-list {
+  display: grid;
+  gap: 20px;
+}
+
+.article {
+  display: grid;
+  gap: 10px;
+}
+
+/* Галерея изоб. */
+.images-list {
+  display: grid;
+  gap: 10px;
+}
+
+.images__items {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Футер */
+.footer {
+  display: grid;
+  place-items: center;
+  padding: 40px var(--container-padding);
+  min-height: 668px;
+  height: 100vh;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 83%;
+  font-size: var(--title-size);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* Адаптация через брейкпоинты */
+
+@media (width >= 768px) {
+  .images-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 172px;
+    margin-block-end: 70px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 28px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 28px;
+    inset-block-end: 20px;
+  }
+  .header__description {
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+    align-self: center;
+  }
+
+  .header__rec {
+    inset-inline-end: calc(28px + var(--rec-offset-x));
+    inset-block-start: 20px;
+  }
+  .decorated-zone::before {
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+  }
+
+  .header__title {
+    font-size: var(--title-size);
+    margin-inline-start: -15px;
+  }
+
+  .images-list__item {
+    display: contents;
+  }
+
+  .gallery__item__sunset {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .gallery__item__ice-cream {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+  .gallery__item__tape {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+  .gallery__item__books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .gallery__item__street {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .section {
+    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+  }
+
+  .section__conc-article-list {
+    grid-column: span 2;
+  }
+
+  .section__how-article-list {
+    grid-column-start: 2;
+  }
+
+  .section__images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section__conc-article-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section__conc-article-list .article {
+    align-content: start;
+  }
+  .header__title {
+    font-size: var(--title-size);
+    margin-inline-start: -15px;
+  }
+  .header__description {
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+    margin-block: 114px;
+    margin-bottom: 114px;
+  }
 }
