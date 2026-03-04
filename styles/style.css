@@ -343,6 +343,10 @@
     grid-template-columns: clamp(236px, 50%, 315px) 1fr;
   }
 
+  .section__images {
+  grid-template-columns: 1fr;
+}
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
