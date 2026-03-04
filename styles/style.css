@@ -52,7 +52,6 @@
   padding: var(--container-padding);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  align-items: start;
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
@@ -135,7 +134,7 @@
 }
 
 .header__description {
-  margin: 55px 0 66px;
+  margin: 55px 0 57px;
   color: var(--on-accent, #000028);
   font-weight: 700;
   font-size: inherit;
@@ -220,7 +219,7 @@
 .footer {
   display: grid;
   place-items: center;
-  padding: 40px var(--container-padding);
+  padding: 0px var(--container-padding);
   min-height: 668px;
   height: 100vh;
 }
@@ -246,23 +245,28 @@
     margin-block-end: 70px;
   }
 
+  .main-content {
+    padding: 60px var(--container-padding);
+    gap: 80px;
+  }
+
   .decorated-zone::before {
-    inset-inline-end: 28px;
-    inset-block-start: 20px;
+    inset-inline-end: 19px;
+    inset-block-start: 19px;
   }
 
   .decorated-zone::after {
-    inset-inline-start: 28px;
-    inset-block-end: 20px;
+    inset-inline-start: 19px;
+    inset-block-end: 19px;
   }
   .header__description {
     justify-self: end;
-    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+    inline-size: clamp(364px, 50vw - 40px, 491px);
     align-self: center;
   }
 
   .header__rec {
-    inset-inline-end: calc(28px + var(--rec-offset-x));
+    inset-inline-end: calc(15px + var(--rec-offset-x));
     inset-block-start: 20px;
   }
   .decorated-zone::before {
@@ -304,7 +308,7 @@
   }
 
   .section {
-    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+    grid-template-columns: clamp(236px, 30%, 315px) 1fr;
   }
 
   .section__conc-article-list {
@@ -319,9 +323,26 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .footer {
+    padding: 0 var(--container-padding);
+  }
 }
 
 @media (width >= 1024px) {
+  .header {
+    align-self: center;
+  }
+
+  .main-content {
+    padding: 60px var(--container-padding);
+    gap: 80px;
+  }
+
+  .section {
+    grid-template-columns: clamp(236px, 50%, 315px) 1fr;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -348,8 +369,8 @@
   }
   .header__description {
     justify-self: end;
-    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
-    margin-block: 114px;
-    margin-bottom: 114px;
+    inline-size: 50%;
+    margin-block: 107px;
+    margin-bottom: 110px;
   }
 }
