@@ -6,6 +6,7 @@
   line-height: var(--line-height);
   color: var(--text-color);
   background-color: var(--bg-color);
+  background-attachment: fixed;
 }
 
 .shadow-decor {
@@ -268,13 +269,6 @@
   .header__rec {
     inset-inline-end: calc(15px + var(--rec-offset-x));
     inset-block-start: 20px;
-  }
-  .decorated-zone::before {
-    inset-block-start: 20px;
-  }
-
-  .decorated-zone::after {
-    inset-block-end: 20px;
   }
 
   .header__title {
