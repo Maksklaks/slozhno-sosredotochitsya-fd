@@ -7,6 +7,7 @@
 :root.theme-dark {
   --bg-color: #000028;
   --bg-image: url("../images/cover-image-dark.png");
+  
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
   --sec-color: var(--ui-color);
@@ -21,8 +22,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --bg-color: #000028;
+  --bg-color: #000028;
   --bg-image: url("../images/cover-image-dark.png");
+
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
   --sec-color: var(--ui-color);
