@@ -135,23 +135,23 @@
 
 .header__description {
   margin: 55px 0 57px;
-  color: var(--on-accent, #000028);
+  color: var(--on-accent);
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
-  background: var(--accent-color, #ff0070);
+  background: var(--accent-color);
 }
 
 /* текст и оформление ссылок */
 .title {
-  color: var(--accent-color);
+  color: var(--sec-color);
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
 }
 
 .title-decor {
-  color: var(--on-accent);
+  color: var(--h-color);
   background: var(--accent-color);
 }
 

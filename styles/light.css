@@ -10,6 +10,8 @@
 
   --text-color: #353430;
   --accent-color: #ff8dcb;
+  --sec-color: var(--text-color);
+  --h-color: var(--text-color);
   --title-color: #ffc2e6;
   --on-accent: #353430;
 
@@ -25,6 +27,8 @@
 
     --text-color: #353430;
     --accent-color: #ff8dcb;
+    --sec-color: var(--text-color);
+    --h-color: var(--text-color);
     --title-color: #ffc2e6;
     --on-accent: #353430;
     --ui-color: #353430;
