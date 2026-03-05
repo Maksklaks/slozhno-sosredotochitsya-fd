@@ -19,7 +19,6 @@
   --rec-offset-x: 12px;
 
   /* для фокусов/границ */
-  --outline-color: currentColor;
   --outline: 1px solid var(--outline-color);
   --ui-color: var(--accent-color);
   --ui-hover-border: rgba(255, 0, 112, 0.4);

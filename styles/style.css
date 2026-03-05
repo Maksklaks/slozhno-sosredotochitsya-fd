@@ -7,6 +7,9 @@
   color: var(--text-color);
   background-color: var(--bg-color);
   background-attachment: fixed;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
 }
 
 .shadow-decor {
@@ -16,12 +19,6 @@
 /* Декоративные углы рамки */
 .decorated-zone {
   position: relative;
-}
-
-.cover {
-  display: grid;
-  padding: var(--container-padding);
-  min-block-size: 100vh;
 }
 
 .decorated-zone::before,
@@ -53,9 +50,6 @@
   padding: var(--container-padding);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
 }
 
 .header__rec {
@@ -140,6 +134,7 @@
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
+  align-self: flex-start;
   background: var(--accent-color);
 }
 
@@ -156,12 +151,17 @@
   background: var(--accent-color);
 }
 
+.title-addit {
+  font-weight: 400;
+}
+
 .link {
   text-decoration: none;
 }
 
 .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
 }
 
 .link:focus {
@@ -177,6 +177,7 @@
   display: grid;
   gap: var(--section-gap);
   padding: 40px var(--container-padding);
+  background-color: var(--bg-color);
 }
 
 .section {
@@ -223,6 +224,7 @@
   padding: 0px var(--container-padding);
   min-height: 668px;
   height: 100vh;
+  background-color: var(--bg-color);
 }
 
 .footer__title {
@@ -272,7 +274,6 @@
   }
 
   .header__title {
-    font-size: var(--title-size);
     margin-inline-start: -15px;
   }
 
@@ -317,20 +318,11 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
-  .footer {
-    padding: 0 var(--container-padding);
-  }
 }
 
 @media (width >= 1024px) {
   .header {
     align-self: center;
-  }
-
-  .main-content {
-    padding: 60px var(--container-padding);
-    gap: 80px;
   }
 
   .section {
@@ -365,7 +357,7 @@
   .header__description {
     justify-self: end;
     inline-size: 50%;
-    margin-block: 107px;
-    margin-bottom: 110px;
+    margin-block-start: 107px;
+    margin-block-end: 110px;
   }
 }
